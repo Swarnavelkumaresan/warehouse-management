@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+### Warehouse Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- Description: -->
+The Warehouse Management System is a React-based application designed to manage warehouse listings, details, and custom fields. It allows users to view a list of warehouses, filter and sort them, view detailed information about a selected warehouse, and add new warehouses with custom fields.
 
-## Available Scripts
+<!-- Features: -->
+Warehouse List: View and filter a list of warehouses.
 
-In the project directory, you can run:
+Warehouse Details: View and edit detailed information about a specific warehouse.
 
-### `npm start`
+Add New Warehouse: Add new warehouses with custom fields.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Custom Fields: Add and edit custom fields for each warehouse.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Carousel: Dynamic carousel to showcase images.
 
-### `npm test`
+<!-- Technologies Used -->
+Front-end: React.js, React-Redux
+Back-end: None (client-side application)
+Tools: Git, VS Code
+Styling: Custom CSS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+<!-- Installation -->
+1.	Clone the repository
+git clone https://github.com/your-username/your-repo-name.git
+2.	Navigate to the project directory
+cd your-repo-name
+3.	Install the dependencies
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- Usage -->
+1.	Start the development Server
+npm start
+2.	Open your browser and navigate to ‘http://localhost:3000’.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- Project Structure -->
+App.jsx: The main component defining the routes of the application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+index.js: Entry point of the application, setting up Redux, React Router, and the root component.
 
-### `npm run eject`
+/pages/WarehouseList.jsx: Component for displaying the list of warehouses with filtering and sorting options.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+/pages/WarehouseDetails.jsx: Component for displaying and editing the details of a specific warehouse.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+/pages/components/Footer.jsx: Footer component with social media links.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+/pages/components/PopupForm.jsx: Popup form component for adding new warehouses.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+/redux/store.js: Redux store configuration.
 
-## Learn More
+/redux/warehouseSlice.js: Redux slice managing the warehouse state.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- Acknowledgements -->
+React: For building the user interface.
+Redux: For state management.
+React Toastify: For toast notifications.
+React Slick: For the carousel component.

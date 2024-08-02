@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+/* Global Styles */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +11,632 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7f6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+/* container for the warehouse list */
+.warehouse-list {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Header and button alignment */
+.Nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+
+/* Header styling */
+.warehouse-list h1 {
+  font-size: 2.2rem;
+  color: #333;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Align add-warehouse-btn with header */
+.add-warehouse-btn {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.add-warehouse-btn:hover {
+  background-color: #575656;
+}
+
+/* Inline filter options styling */
+.inline-filter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-div {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Filter options styling */
+.inline-filter-container select,
+.inline-filter-container input {
+  padding: 8px;
+  border-radius: 5px;
+  color: #666;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.inline-filter-container input[type="number"] {
+  max-width: 150px;
+}
+
+/* Search and filter container styling */
+.search-filter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Search input styling */
+.search-input {
+  flex: 1;
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: width 0.3s ease;
+}
+
+/* Card container for warehouses */
+.warehouse-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Individual warehouse card */
+.warehouse-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Warehouse photo styling */
+.warehouse-photo {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.warehouse-card-link {
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Ensure text color inherits from parent */
+}
+
+.warehouse-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+
+/* Warehouse info styling */
+.warehouse-info {
+  padding: 12px;
+}
+
+.warehouse-info h2 {
+  font-size: 1.4rem;
+  color: #333;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.warehouse-info p {
+  margin: 6px 0;
+  color: #666;
+}
+
+.warehouse-info a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.warehouse-card:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Carousel container styling */
+.carousel-container {
+  position: relative;
+}
+
+.carousel-container img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.slick-prev, .slick-next {
+  font-size: 24px;
+}
+
+.slick-dots {
+  bottom: 10px;
+}
+
+/* container for the warehouse details */
+.warehouse-details {
+  padding: 30px;
+  background-color: #f4f7f6;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+.warehouse-details h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px; 
+  font-family: 'Arial', sans-serif;
+}
+
+/* Input and select styling */
+.warehouse-details input,
+.warehouse-details select {
+  width: 100%; 
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Button styling */
+.warehouse-details button {
+  background-color: #007bff;
+  color: white;
+  border: none; 
+  border-radius: 4px; 
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.warehouse-details button:hover {
+  background-color: #0056b3;
+}
+
+.details-header{
+  display: flex;
+  justify-content: center;
+}
+
+/* Form and input styling */
+.details-form {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #333;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.details-form div {
+  margin-bottom: 15px;
+}
+
+.details-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.details-form input,
+.details-form select {
+  width: 100%;
+  padding: 10px;
+  color: #666;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.details-form button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.details-form button:hover {
+  background-color: #666;
+}
+
+/* Custom field section styling */
+.custom-field {
+  margin-top: 20px;
+}
+
+.custom-field h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.custom-field input {
+  margin-bottom: 10px;
+}
+
+.custom-field button {
+  background-color: #333;
+}
+
+.custom-field button:hover {
+  background-color: #666;
+}
+
+/* Photo container styling */
+
+.photo-container {
+  position: relative;
+}
+
+.warehouse-photo-container {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.add-field-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background-color: #666;
+  color: white;
+  border-radius: 20%;
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.add-field-icon:hover {
+  background-color: #333;
+  transform: scale(1.1);
+}
+
+.add-field-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 50%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-field-button:hover {
+  background-color: #666;
+}
+
+.custom-field-form {
+  margin-top: 20px;
+}
+
+.warehouse-photo {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  border-radius: 8px;
+  max-height: 300px;
+}
+
+/* Popup Form Styles */
+.popup-overlay, .confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-content {
+  position: relative;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: scale(0.9);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-overlay.show .popup-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.popup-content input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.popup-content button {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #666;
+  transform: scale(1.05);
+}
+
+.popup-close-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.popup-close-icon:hover {
+  color: #666;
+}
+
+.popup-content .close-btn {
+  background-color: #ccc;
+  border: none;
+  margin-left: auto;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.popup-content .close-btn:hover {
+  background-color: #aaa;
+}
+
+h2 {
+  margin: 0 0 15px;
+  font-size: 1.5rem;
+  color: #333;
+  border-bottom: 2px solid #f4f4f4;
+  padding-bottom: 10px;
+}
+
+input[type="text"], 
+input[type="number"], 
+select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+input[type="text"]::placeholder, 
+select {
+  color: #888;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.popup-container, .confirmation-container {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  overflow: hidden;
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-popup:hover {
+  color: #666;
+}
+
+/* Confirmation dialog styles */
+.confirmation-container h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.confirmation-container p {
+  color: #666;
+}
+
+.confirmation-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.confirmation-buttons button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.popup-form h2 {
+  margin: 0 0 20px 0;
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.popup-form input {
+  display: block;
+  width: calc(100% - 16px);
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.popup-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-form button:hover {
+  background-color: #666;
+}
+
+/* Footer.css */
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: left;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.company-info h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.company-info p {
+  margin: 5px 0;
+}
+
+.social-links a {
+  color: #666;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  font-size: 0.9rem;
 }
